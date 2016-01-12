@@ -9,7 +9,7 @@ describe 'class spacewalk:package:' do
       end
     end
     shell('rm -rf /etc/sysconfig/spacewalk.answer')
-    
+
     it 'setup postgresql db' do
       shell('spacewalk-setup-postgresql remove --db spaceschema --user spaceuser')
       shell('spacewalk-setup-postgresql remove --db spacedb --user user')
@@ -19,7 +19,7 @@ describe 'class spacewalk:package:' do
 
   context 'postgresql_embedded => false:' do
     it 'runs successfully' do
-      pp = "class { 'spacewalk': db_backend => postgresql, postgresql_embedded => false, 
+      pp = "class { 'spacewalk': db_backend => postgresql, postgresql_embedded => false,
             db_name => spacedb, db_user => user, db_password => mypassword, skip_db_install_opt => true }"
 
       apply_manifest(pp, catch_failures: true) do |r|
