@@ -55,6 +55,7 @@ class { 'spacewalk':
 class { 'spacewalk': 
   skip_db_diskspace_check_opt => true,
 }
+```
 
 ## Reference
 
