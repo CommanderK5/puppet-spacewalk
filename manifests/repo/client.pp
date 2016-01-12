@@ -1,8 +1,10 @@
 # Class: spacewalk::repo::client
+# ===========================
 #
 # Setup spacewalk yum repositories 
 #
 # Examples:
+# ---------
 #
 # Enable with defaults:
 #  include spacewalk::repo::client

@@ -44,6 +44,7 @@ describe 'spacewalk' do
         it { is_expected.to contain_class('spacewalk') }
         it { is_expected.to contain_class('spacewalk::params') }
         it { is_expected.to contain_class('spacewalk::packages') }
+        it { is_expected.to contain_class('spacewalk') }
       end
     end
   end

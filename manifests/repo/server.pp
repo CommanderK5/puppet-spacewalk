@@ -1,8 +1,10 @@
-# Class: spacewalk::repo
+# Class: spacewalk::repo::server
+# ===========================
 #
 # Setup spacewalk yum repositories 
 #
 # Examples:
+# ---------
 #
 # Enable with defaults:
 #  include spacewalk::repo::server

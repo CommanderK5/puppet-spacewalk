@@ -1,0 +1,16 @@
+admin-email = <%= @admin_email %>
+ssl-set-org = <%= @ca_organization %>
+ssl-set-org-unit = <%= @ca_organization_unit %>
+ssl-set-city = <%= @ca_city %>
+ssl-set-state = <%= @ca_state %>
+ssl-set-country = <%= @ca_country_code %>
+ssl-password = <%= @ca_cert_password %>
+ssl-set-email = <%= @ca_email_address %>
+ssl-config-sslvhost = <% if @configure_apache_ssl == true then %>Y<% else %>N<% end %>
+db-backend = <%= @db_backend %>
+db-name = <%= @db_name %>
+db-user = <%= @db_user %>
+db-password = <%= @db_password %>
+db-host = <%= @db_host %>
+db-port = <%= @db_port %>
+enable-tftp = <% if @enable_tftp == true then %>Y<% else %>N<% end %>

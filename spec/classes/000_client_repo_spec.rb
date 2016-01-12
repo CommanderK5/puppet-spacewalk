@@ -28,6 +28,7 @@ describe 'spacewalk::repo::client' do
       end
 
       it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_class('spacewalk::repo::client') }
 
       case facts[:operatingsystemmajrelease]
       when '6'

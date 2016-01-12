@@ -3,13 +3,10 @@ require 'puppet-lint/tasks/puppet-lint'
 require 'rspec/core/rake_task'
 require 'puppet-lint/tasks/puppet-lint'
 require 'puppet-syntax/tasks/puppet-syntax'
-require 'puppet-doc-lint/rake_task'
 require 'rubocop/rake_task'
 
 PuppetLint.configuration.send('disable_80chars')
 PuppetLint.configuration.ignore_paths = ['spec/**/*.pp', 'pkg/**/*.pp']
-PuppetDocLint.configuration.ignore_paths = ['vendor/**/*.pp', 'spec/**/*.pp']
-
 
 RuboCop::RakeTask.new(:rubocop) do |task|
   task.patterns = ['spec/**/*.rb']

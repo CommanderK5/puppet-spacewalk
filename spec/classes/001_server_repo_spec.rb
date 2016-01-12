@@ -32,7 +32,7 @@ describe 'spacewalk::repo::server' do
       let(:params) do
         default_params
       end
-
+      it { is_expected.to contain_class('spacewalk::repo::server') }
       it { is_expected.to compile.with_all_deps }
       it { is_expected.to contain_yumrepo('jpackage-generic') }
 

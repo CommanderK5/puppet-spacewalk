@@ -1,7 +1,7 @@
 {
-  "name": "lukaszr-spacewalk",
+  "name": "commanderk5-spacewalk",
   "version": "0.0.1",
-  "author": "lukaszr",
+  "author": "Lukasz Rohde",
   "summary": "Puppet Spacewalk module",
   "license": "Apache-2.0",
   "source": "",
