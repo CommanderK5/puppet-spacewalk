@@ -64,14 +64,14 @@ class { 'spacewalk':
 ####Public Classes
 
 * spacewalk: Main class, includes all other classes.
-* Spacewalk::repo::server: Manages Spacewalk and Jpackage yum repositories.
+* spacewalk::repo::server: Manages Spacewalk and Jpackage yum repositories.
 * spacewalk::repo::client: Manages Spacewalk client yum repositories.
 
 ####Private Classes
 
-* ntp::package: Handles the packages.
-* ntp::setup: Handles the spacewalk setup utility.
-* ntp::service: Handles the service.
+* spacewalk::package: Handles the packages.
+* spacewalk::setup: Handles the spacewalk setup utility.
+* spacewalk::service: Handles the service.
 
 ###Paramseters
 
