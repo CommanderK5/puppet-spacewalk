@@ -1,46 +1,35 @@
 # Class: spacewalk
 # ===========================
 #
-# Full description of class spacewalk here.
+#  The spacewalk module installs and configures Spacewalk server.
 #
-# Parameters
-# ----------
 #
-# Document parameters here.
+# Example
+#============================
 #
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
+# Enable with defaults:
+#  class {'spacewalk':}
 #
-# Variables
-# ----------
+# Spacewalk setup with external postgrsql:
+#  class { 'spacewalk': 
+#    db_backend          => postgresql,
+#    postgresql_embedded => false,
+#    db_name             => spacedb,
+#    db_user             => user, 
+#    db_password         => mypassword,
+#    db_host             => exampledb.test.com
+#  }
 #
-# Here you should define a list of variables that this module would require.
-#
-# * `sample variable`
-#  Explanation of how this variable affects the function of this class and if
-#  it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#  External Node Classifier as a comma separated list of hostnames." (Note,
-#  global variables should be avoided in favor of class parameters as
-#  of Puppet 2.6.)
-#
-# Examples
-# --------
-#
-# @example
-#    class { 'spacewalk':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#    }
 #
 # Authors
 # -------
 #
-# Author Name <author@domain.com>
+# Lukasz Rohde <kujon447@gmail.com>
 #
 # Copyright
 # ---------
 #
-# Copyright 2015 Your name here, unless otherwise noted.
+# Copyright 2015 Lukasz Rohde.
 #
 class spacewalk (
 
