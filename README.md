@@ -1,4 +1,4 @@
-# spacewalk
+# Puppet Spacewalk Module
 
 #### Table of Contents
 
