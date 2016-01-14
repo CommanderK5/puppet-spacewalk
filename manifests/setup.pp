@@ -41,11 +41,11 @@ class spacewalk::setup (
       }
       else { $external = '' }
     }
-    'oracle': { 
-      $external = '--external-oracle' 
+    'oracle': {
+      $external = '--external-oracle'
     }
-    default:  { 
-      $external = '' 
+    default:  {
+      $external = ''
     }
   }
 
@@ -99,7 +99,7 @@ class spacewalk::setup (
 
   $setup_opts = "${disconnected} ${external} ${re_register} ${clear_db}"
   $skip_opts  = "${skip_db_diskspace_check} ${skip_selinux_test} ${skip_db_install} ${skip_db_population} ${skip_fqdn_test}"
-  $command    = "spacewalk-setup --answer-file=/etc/sysconfig/spacewalk.answer --non-interactive ${setup_opts} ${skip_opts}" 
+  $command    = "spacewalk-setup --answer-file=/etc/sysconfig/spacewalk.answer --non-interactive ${setup_opts} ${skip_opts}"
   
   file {'/etc/sysconfig/spacewalk.answer':
     ensure  => 'present',

@@ -10,11 +10,11 @@ class spacewalk::service (
 ){
 
   service {'spacewalk-service':
-    ensure  => $service_ensure,
-    start   => 'spacewalk-service start',
-    stop    => 'spacewalk-service stop',
-    restart => 'spacewalk-service restart',
-    status  => 'spacewalk-service status',
+    ensure   => $service_ensure,
+    start    => 'spacewalk-service start',
+    stop     => 'spacewalk-service stop',
+    restart  => 'spacewalk-service restart',
+    status   => 'spacewalk-service status',
     provider => base,
   }
 }
