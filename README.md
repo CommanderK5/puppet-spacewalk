@@ -28,7 +28,7 @@ include spacewalk::repo::server
 ### Simmilar for client repo:
 
 ```puppet
-include spacewalk::repo::server
+include spacewalk::repo::client
 ```
 
 ### Install spacewalk with defaults (postgresql embedded):
