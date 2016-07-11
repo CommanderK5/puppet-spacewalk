@@ -147,10 +147,6 @@ Certificate country code.
 
 Enable tftp and xinetd services needed for Cobbler PXE provisioning functionality. Valid options: true or false. Default value: true.
 
-###```disconnected_opt```
-
-Install the satellite in disconnected mode. Valid options: true or false. Default value: true.
-
 ###```re_register_opt```
 
 Register the system with RHN, even if it is already registered. Valid options: true or false. Default value: false.

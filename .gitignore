@@ -3,3 +3,4 @@ junit
 log
 pkg
 .DS_Store
+Vagrantfile
