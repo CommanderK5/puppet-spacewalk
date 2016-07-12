@@ -179,7 +179,7 @@ Do not populate the database schema. Valid options: true or false. Default value
 
 ## Limitations
 
-Tested on Centos 6.7 and Centos 7.1.
+Tested on Centos 6.7 and Centos 7.2.
 
 ## TODO
 
