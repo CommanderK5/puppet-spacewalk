@@ -39,14 +39,14 @@ describe 'spacewalk::setup' do
       it { is_expected.to contain_exec('spacewalk-setup').with_command('/usr/bin/spacewalk.sh') }
       it { is_expected.to contain_exec('spacewalk-setup').that_requires(['File[/usr/bin/spacewalk.sh]', 'File[/etc/sysconfig/spacewalk.answer]']) }
       it do
-        is_expected.to contain_file('/usr/bin/spacewalk.sh').with(content: %r{^spacewalk-setup.+--answer-file=\/etc\/sysconfig\/spacewalk\.answer\s+?--non-interactive\s+?--skip-db-diskspace-check(\s+)?}m)
+        is_expected.to contain_file('/usr/bin/spacewalk.sh').with(content: %r{^#!/bin/bash\nspacewalk-setup.+--answer-file=\/etc\/sysconfig\/spacewalk\.answer\s+?--non-interactive\s+?--skip-db-diskspace-check(\s+)?}m)
       end
     end
 
     describe 'with setup options' do
       let(:params) { { re_register_opt: true, clear_db_opt: true } }
       it do
-        is_expected.to contain_file('/usr/bin/spacewalk.sh').with(content: %r{^spacewalk-setup.+--answer-file=\/etc\/sysconfig\/spacewalk\.answer\s+?--non-interactive\s+?--re-register\s+?--clear-db(\s+)?}m)
+        is_expected.to contain_file('/usr/bin/spacewalk.sh').with(content: %r{^#!/bin/bash\nspacewalk-setup.+--answer-file=\/etc\/sysconfig\/spacewalk\.answer\s+?--non-interactive\s+?--re-register\s+?--clear-db(\s+)?}m)
       end
     end
 
@@ -61,7 +61,7 @@ describe 'spacewalk::setup' do
         }
       end
       it do
-        is_expected.to contain_file('/usr/bin/spacewalk.sh').with(content: %r{^spacewalk-setup.+--answer-file=\/etc\/sysconfig\/spacewalk\.answer\s+?--non-interactive\s+?--skip-db-diskspace-check\s+?--skip-selinux-test\s+?--skip-db-install\s+?--skip-db-population\s+?--skip-fqdn-test(\s+)?}m)
+        is_expected.to contain_file('/usr/bin/spacewalk.sh').with(content: %r{^#!/bin/bash\nspacewalk-setup.+--answer-file=\/etc\/sysconfig\/spacewalk\.answer\s+?--non-interactive\s+?--skip-db-diskspace-check\s+?--skip-selinux-test\s+?--skip-db-install\s+?--skip-db-population\s+?--skip-fqdn-test(\s+)?}m)
       end
     end
   end
