@@ -11,7 +11,7 @@
 
 ## Overview
 
-The spacewalk module installs and configures Spacewalk server. Inspired by [phundisk/puppet-spacewalk](https://github.com/phundisk/puppet-spacewalk)
+The spacewalk module installs and configures Spacewalk server.
 
 ## Module Description
 
