@@ -7,3 +7,4 @@ Vagrantfile
 .bundle
 .bundle/config
 gems
+Gemfile.lock

@@ -22,11 +22,11 @@ class spacewalk::setup (
   $ca_state                    = $spacewalk::ca_state,
   $ca_country_code             = $spacewalk::ca_country_code,
   $enable_tftp                 = $spacewalk::enable_tftp,
-  
+
   $disconnected_opt            = $spacewalk::disconnected_opt,
   $re_register_opt             = $spacewalk::re_register_opt,
   $clear_db_opt                = $spacewalk::clear_db_opt,
-  
+
   $skip_selinux_test_opt       = $spacewalk::skip_selinux_test_opt,
   $skip_db_diskspace_check_opt = $spacewalk::skip_db_diskspace_check_opt,
   $skip_db_install_opt         = $spacewalk::skip_db_install_opt,
@@ -84,7 +84,7 @@ class spacewalk::setup (
     false   => '',
     default => '',
   }
-  
+
   $skip_fqdn_test = $skip_fqdn_test_opt ? {
     true    => '--skip-fqdn-test',
     false   => '',
@@ -94,7 +94,7 @@ class spacewalk::setup (
   $setup_opts = "${external} ${re_register} ${clear_db}"
   $skip_opts  = "${skip_db_diskspace_check} ${skip_selinux_test} ${skip_db_install} ${skip_db_population} ${skip_fqdn_test}"
   $command    = "#!/bin/bash\nspacewalk-setup --answer-file=/etc/sysconfig/spacewalk.answer --non-interactive ${setup_opts} ${skip_opts}"
-  
+
   file {'/etc/sysconfig/spacewalk.answer':
     ensure  => 'present',
     owner   => 'root',

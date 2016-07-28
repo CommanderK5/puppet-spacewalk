@@ -36,7 +36,7 @@ class spacewalk::repo::client (
         baseurl  => "http://yum.spacewalkproject.org/${client_repo_release}-client/RHEL/${::operatingsystemmajrelease}/\$basearch/",
       }
     }
-    
+
     default: {
       fail("OS ${::operatingsystem} not supported")
     }

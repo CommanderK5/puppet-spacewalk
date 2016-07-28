@@ -35,7 +35,7 @@ class spacewalk (
 
   ### service
   $service_ensure              = running,
-  
+
   ### answer file
   $db_backend                  = $spacewalk::params::db_backend,
   $postgresql_embedded         = $spacewalk::params::postgresql_embedded,
@@ -54,12 +54,12 @@ class spacewalk (
   $ca_state                    = $spacewalk::params::ca_state,
   $ca_country_code             = $spacewalk::params::ca_country_code,
   $enable_tftp                 = $spacewalk::params::enable_tftp,
-  
+
   ### setup options
   $disconnected_opt            = true,
   $re_register_opt             = false,
   $clear_db_opt                = false,
-  
+
   ### skip options
   $skip_selinux_test_opt       = false,
   $skip_db_diskspace_check_opt = true,

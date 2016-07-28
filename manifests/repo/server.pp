@@ -40,7 +40,7 @@ class spacewalk::repo::server (
         gpgkey   => $spacewalk_repo_gpgkey,
         baseurl  => "http://yum.spacewalkproject.org/${spacewalk_repo_release}/RHEL/${::operatingsystemmajrelease}/\$basearch/",
     }
-    
+
       yumrepo {'jpackage-generic':
         enabled    => $jpackage_repo_enabled,
         descr      => 'Jpackage Generic Repository',

@@ -7,7 +7,7 @@ class spacewalk::params {
 
   case $::operatingsystem {
     'RedHat', 'CentOS': {
-      
+
       $db_backend                  = 'postgresql'
       $postgresql_embedded         = true
       $db_name                     = 'spaceschema'
