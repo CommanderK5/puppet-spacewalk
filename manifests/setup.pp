@@ -39,13 +39,13 @@ class spacewalk::setup (
       if $postgresql_embedded == false {
           $external = '--external-postgresql'
       }
-      else { $external = '' }
+      else { $external = undef }
     }
     'oracle': {
       $external = '--external-oracle'
     }
     default:  {
-      $external = ''
+      $external = undef
     }
   }
 
@@ -96,7 +96,7 @@ class spacewalk::setup (
   $command    = "#!/bin/bash\nspacewalk-setup --answer-file=/etc/sysconfig/spacewalk.answer --non-interactive ${setup_opts} ${skip_opts}"
 
   file {'/etc/sysconfig/spacewalk.answer':
-    ensure  => 'present',
+    ensure  => 'file',
     owner   => 'root',
     group   => 'root',
     mode    => '0400',
@@ -105,7 +105,7 @@ class spacewalk::setup (
   }
 
   file {'/usr/bin/spacewalk.sh':
-    ensure  => 'present',
+    ensure  => 'file',
     owner   => 'root',
     group   => 'root',
     mode    => '0750',

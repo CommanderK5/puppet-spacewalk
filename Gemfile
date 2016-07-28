@@ -22,10 +22,10 @@ group :development, :unit_tests do
   gem 'puppet-lint-file_source_rights-check',              :require => false
   gem 'puppet-lint-alias-check',                           :require => false
   gem 'rspec-puppet-facts',                                :require => false
-  gem 'jimdo-rspec-puppet-helpers'                         :require => false
-  gem 'puppet-lint'                                        :require => false
-  gem 'ruby-augeas',                                       :require => false
+  gem 'jimdo-rspec-puppet-helpers',                        :require => false
+  gem 'puppet-lint',                                       :require => false
   gem 'json_pure', '< 2.0.2',                              :require => false
+  gem 'rubocop',                                           :require => false
 end
 
 group :system_tests do

@@ -71,9 +71,9 @@ class spacewalk (
 
 ) inherits spacewalk::params {
 
-  include spacewalk::packages
-  include spacewalk::setup
-  include spacewalk::service
+  include ::spacewalk::packages
+  include ::spacewalk::setup
+  include ::spacewalk::service
 
   Class['spacewalk::packages'] ->
   Class['spacewalk::setup']    ->
