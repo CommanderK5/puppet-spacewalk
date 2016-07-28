@@ -96,7 +96,7 @@ class spacewalk::setup (
   $command    = "#!/bin/bash\nspacewalk-setup --answer-file=/etc/sysconfig/spacewalk.answer --non-interactive ${setup_opts} ${skip_opts}"
 
   file {'/etc/sysconfig/spacewalk.answer':
-    ensure  => 'file',
+    ensure  => file,
     owner   => 'root',
     group   => 'root',
     mode    => '0400',
@@ -105,7 +105,7 @@ class spacewalk::setup (
   }
 
   file {'/usr/bin/spacewalk.sh':
-    ensure  => 'file',
+    ensure  => file,
     owner   => 'root',
     group   => 'root',
     mode    => '0750',
