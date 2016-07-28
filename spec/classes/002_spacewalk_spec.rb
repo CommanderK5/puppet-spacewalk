@@ -21,15 +21,15 @@ describe 'spacewalk' do
   }
 
   on_supported_os(supported_os: [
-    {
-      'operatingsystem' => 'CentOS',
-      'operatingsystemrelease' => %w(6 7)
-    },
-    {
-      'operatingsystem' => 'RedHat',
-      'operatingsystemrelease' => %w(6 7)
-    }
-  ]).each do |os, facts|
+                    {
+                      'operatingsystem' => 'CentOS',
+                      'operatingsystemrelease' => %w(6 7)
+                    },
+                    {
+                      'operatingsystem' => 'RedHat',
+                      'operatingsystemrelease' => %w(6 7)
+                    }
+                  ]).each do |os, facts|
     context "on #{os}" do
       let(:facts) do
         facts

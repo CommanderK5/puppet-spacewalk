@@ -25,7 +25,7 @@ group :development, :unit_tests do
   gem 'jimdo-rspec-puppet-helpers',                        :require => false
   gem 'puppet-lint',                                       :require => false
   gem 'json_pure', '< 2.0.2',                              :require => false
-  gem 'rubocop',                                           :require => false
+  gem 'rubocop',                                           :require => false if RUBY_VERSION !~ /^1\./
 end
 
 group :system_tests do
