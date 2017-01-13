@@ -2,7 +2,7 @@ require 'spec_helper_acceptance'
 
 describe 'class spacewalk:' do
   context 'with defaults:' do
-    it 'should run successfully' do
+    it 'runs successfully' do
       pp = "class { 'spacewalk': }"
 
       apply_manifest(pp, catch_failures: true) do |r|

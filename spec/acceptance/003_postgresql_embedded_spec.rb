@@ -10,43 +10,43 @@ describe 'class spacewalk:package:' do
       end
     end
     describe package('spacewalk-postgresql') do
-      it { should be_installed }
+      it { is_expected.to be_installed }
     end
     describe package('spacewalk-setup-postgresql') do
-      it { should be_installed }
+      it { is_expected.to be_installed }
     end
     describe service('postgresql') do
-      it { should be_running }
+      it { is_expected.to be_running }
     end
     describe service('jabberd') do
-      it { should be_running }
+      it { is_expected.to be_running }
     end
     describe service('httpd') do
-      it { should be_running }
+      it { is_expected.to be_running }
     end
     describe service('tomcat') do
-      it { should be_running }
+      it { is_expected.to be_running }
     end
     describe service('osa-dispatcher') do
-      it { should be_running }
+      it { is_expected.to be_running }
     end
     describe service('rhn-search') do
-      it { should be_running }
+      it { is_expected.to be_running }
     end
     describe service('cobblerd') do
-      it { should be_running }
+      it { is_expected.to be_running }
     end
     describe command('spacewalk-service status') do
-      its(:exit_status) { should eq 0 }
+      its(:exit_status) { is_expected.to eq 0 }
     end
     describe port(80) do
-      it { should be_listening }
+      it { is_expected.to be_listening }
     end
     describe port(443) do
-      it { should be_listening }
+      it { is_expected.to be_listening }
     end
     describe port(5432) do
-      it { should be_listening }
+      it { is_expected.to be_listening }
     end
   end
 end

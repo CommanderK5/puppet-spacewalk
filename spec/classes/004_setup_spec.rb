@@ -8,6 +8,7 @@ describe 'spacewalk::setup' do
     db_password: 'spacewalk',
     db_host: 'localhost',
     db_port: '3398',
+    db_name: 'spacedb',
     admin_email: 'root2localhost',
     configure_apache_ssl: true,
     ca_cert_password: 'capassword',
@@ -18,6 +19,7 @@ describe 'spacewalk::setup' do
     ca_state: 'any',
     ca_country_code: 'AY',
     enable_tftp: true,
+    disconnected_opt: true,
     re_register_opt: false,
     clear_db_opt: false,
     skip_selinux_test_opt: false,
@@ -44,7 +46,35 @@ describe 'spacewalk::setup' do
     end
 
     describe 'with setup options' do
-      let(:params) { { re_register_opt: true, clear_db_opt: true } }
+      let(:params) do
+        {
+          db_backend: 'postgresql',
+          postgresql_embedded: true,
+          db_user: 'spacewalk',
+          db_password: 'spacewalk',
+          db_host: 'localhost',
+          db_port: '3398',
+          db_name: 'spacedb',
+          admin_email: 'root2localhost',
+          configure_apache_ssl: true,
+          ca_cert_password: 'capassword',
+          ca_organization: 'test',
+          ca_organization_unit: 'spec test',
+          ca_email_address: 'root@localhost',
+          ca_city: 'any',
+          ca_state: 'any',
+          ca_country_code: 'AY',
+          enable_tftp: true,
+          disconnected_opt: true,
+          re_register_opt: true,
+          clear_db_opt: true,
+          skip_selinux_test_opt: false,
+          skip_db_diskspace_check_opt: true,
+          skip_db_install_opt: false,
+          skip_fqdn_test_opt: false,
+          skip_db_population_opt: false
+        }
+      end
       it do
         is_expected.to contain_file('/usr/bin/spacewalk.sh').with(content: %r{^#!/bin/bash\nspacewalk-setup.+--answer-file=\/etc\/sysconfig\/spacewalk\.answer\s+?--non-interactive\s+?--re-register\s+?--clear-db(\s+)?}m)
       end
@@ -53,6 +83,26 @@ describe 'spacewalk::setup' do
     describe 'with skip options' do
       let(:params) do
         {
+          db_backend: 'postgresql',
+          postgresql_embedded: true,
+          db_user: 'spacewalk',
+          db_password: 'spacewalk',
+          db_host: 'localhost',
+          db_port: '3398',
+          db_name: 'spacedb',
+          admin_email: 'root2localhost',
+          configure_apache_ssl: true,
+          ca_cert_password: 'capassword',
+          ca_organization: 'test',
+          ca_organization_unit: 'spec test',
+          ca_email_address: 'root@localhost',
+          ca_city: 'any',
+          ca_state: 'any',
+          ca_country_code: 'AY',
+          enable_tftp: true,
+          disconnected_opt: true,
+          re_register_opt: false,
+          clear_db_opt: false,
           skip_selinux_test_opt: true,
           skip_db_diskspace_check_opt: true,
           skip_db_install_opt: true,

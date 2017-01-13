@@ -9,9 +9,9 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-include spacewalk::repo::client
-include spacewalk::repo::server
+include ::spacewalk::repo::client
+include ::spacewalk::repo::server
 
-class {'spacewalk':
+class {'::spacewalk':
   skip_db_diskspace_check_opt => true,
 }

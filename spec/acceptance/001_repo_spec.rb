@@ -15,7 +15,7 @@ end
 
 describe 'spacewalk repo client class:' do
   describe 'run puppet' do
-    it 'should run successfully' do
+    it 'runs successfully' do
       pp = "class { 'spacewalk::repo::client': }"
 
       apply_manifest(pp, catch_failures: true) do |r|
@@ -31,16 +31,16 @@ describe 'spacewalk repo client class:' do
 
   describe 'client repo' do
     describe file('/etc/yum.repos.d/spacewalk-client.repo') do
-      it { should exist }
-      it { should be_file }
-      it { should contain "http://yum.spacewalkproject.org/latest-client/RHEL/#{release}/$basearch/" }
+      it { is_expected.to exist }
+      it { is_expected.to be_file }
+      it { is_expected.to contain "http://yum.spacewalkproject.org/latest-client/RHEL/#{release}/$basearch/" }
     end
   end
 end
 
 describe 'spacewalk repo server class:' do
   describe 'run puppet' do
-    it 'should run successfully' do
+    it 'runs successfully' do
       pp = "class { 'spacewalk::repo::server': }"
 
       apply_manifest(pp, catch_failures: true) do |r|
@@ -56,17 +56,17 @@ describe 'spacewalk repo server class:' do
 
   describe 'server repo' do
     describe file('/etc/yum.repos.d/spacewalk.repo') do
-      it { should exist }
-      it { should be_file }
-      it { should contain "http://yum.spacewalkproject.org/latest/RHEL/#{release}/$basearch/" }
+      it { is_expected.to exist }
+      it { is_expected.to be_file }
+      it { is_expected.to contain "http://yum.spacewalkproject.org/latest/RHEL/#{release}/$basearch/" }
     end
   end
 
   describe 'jpackage repo' do
     describe file('/etc/yum.repos.d/jpackage-generic.repo') do
-      it { should exist }
-      it { should be_file }
-      it { should contain 'http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=5.0' }
+      it { is_expected.to exist }
+      it { is_expected.to be_file }
+      it { is_expected.to contain 'http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=5.0' }
     end
   end
 end

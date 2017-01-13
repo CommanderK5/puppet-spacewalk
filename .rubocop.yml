@@ -1,5 +1,35 @@
+require: rubocop-rspec
+AllCops:
+  TargetRubyVersion: 2.0
+  Include:
+    - ./**/*.rb
+  Exclude:
+    - files/**/*
+    - vendor/**/*
+    - .vendor/**/*
+    - pkg/**/*
+    - spec/fixtures/**/*
+
+Lint/ConditionPosition:
+  Enabled: True
+
 Metrics/LineLength:
   Enabled: false
 
 Style/EmptyLines:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleDescribes:
+  Enabled: false
+
+RSpec/NestedGroups:
   Enabled: false
